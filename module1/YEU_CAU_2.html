@@ -2,9 +2,119 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>yeu_cau_2</title>
 </head>
 <body>
-$END$
+<script>
+    let name = "hoạt";
+    let cmnd = "194634172";
+    let birthday = "16/03/97";
+    let email = "vanhoat1631997@gmail.com";
+    let address = "Quảng Bình";
+    let typeservice = "hotel";
+    let typeroom = "vip";
+    let typecustomer = "diamod";
+    let discount = "10%";
+    let quantityIncluded = "10";
+    let rendDay = "8";
+    let totalpay = 300 * rendDay * (1 - discount / 100);
+    let choose = parseInt(prompt("1.hiển thị thông tin khách hàng" + "\n" + "2. chỉnh sửa thông tin khách hàng"
+        + "\n" + "3. hiển thị thông tin sau khi được giảm giá"));
+    alert("name: " + name + "cmnd: " + cmnd + "totalpay " + totalpay);
+    switch (choose) {
+        case 1: {
+            alert("Tên: " + name + "\n" +
+                "cmnd: " + cmnd + "\n" +
+                "ngày sinh nhật: " + birthday +
+                "email: " + email + "\n" +
+                "đại chỉ: " + address + "\n" +
+                "loại dịch vụ: " + typeservice + "\n" +
+                "loại phòng: " + typeroom + "\n" +
+                "loại khách hàng: " + typecustomer + "\n" +
+                "giảm giá:" + discount + "\n" +
+                "số lượng đi kèm: " + quantityIncluded + "\n" +
+                "so lượng ngày:" + rendDay);
+            break;
+        }
+        case 2: {
+            let chooseEdit= parseInt(prompt("1.Tên: " + name + "\n" +
+                "2.cmnd: " + cmnd + "\n" +
+                "3.ngày sinh nhật: " + birthday +
+                "4.email: " + email + "\n" +
+                "5.đại chỉ: " + address + "\n" +
+                "6.loại dịch vụ: " + typeservice + "\n" +
+                "7.loại phòng: " + typeroom + "\n" +
+                "8.loại khách hàng: " + typecustomer + "\n" +
+                "9.giảm giá:" + discount + "\n" +
+                "10.số lượng đi kèm: " + quantityIncluded + "\n" +
+                "11.so lượng ngày:" + rendDay));
+              switch (chooseEdit) {
+                case 1:{
+                    name=prompt("Enter name: ");
+                    break;
+                }
+                case 2:{
+                    cmnd=prompt("Enter cmnd: ");
+                    break;
+                }
+                case 3:{
+                    birthday=prompt("Enter ngày sinh:");
+                    break;
+                }
+                case 4:{
+                    email=prompt("Enter email:");
+                    break;
+                }
+                case 5:{
+                    address= prompt("Enter que quan:");
+                    break
+                }
+                case 6:{
+                    typeservice=prompt("Enter loai dich vu:");
+                    break;
+                }
+                case 7:{
+                    typeroom=prompt("Enter loai phong:");
+                    break;
+                }
+                case 8:{
+                    typecustomer=prompt("Enter loai khach hang: ");
+                    break;
+                }
+                case 9: {
+                    discount = prompt("Enter giam gia:");
+                    break;
+                }
+                case 10: {
+                    quantityIncluded=prompt("Enter so luong di kem:");
+                    break;
+                }
+                case 11:{
+                    rendDay=prompt("Enter so luong ngay:");
+                    break;
+                }
+                default:{
+                    alert("ban chon sai so(loai hinh)");
+                }
+              }
+
+            alert("Tên: " + name + "\n" +
+                "cmnd: " + cmnd + "\n" +
+                "ngày sinh nhật: " + birthday +
+                "email: " + email + "\n" +
+                "đại chỉ: " + address + "\n" +
+                "loại dịch vụ: " + typeservice + "\n" +
+                "loại phòng: " + typeroom + "\n" +
+                "loại khách hàng: " + typecustomer + "\n" +
+                "giảm giá:" + discount + "\n" +
+                "số lượng đi kèm: " + quantityIncluded + "\n" +
+                "so lượng ngày:" + rendDay);
+              break;
+        }
+        default:{
+            alert("su lua chon cua ban khong co trong thuc don");
+        }
+    }
+</script>
 </body>
 </html>

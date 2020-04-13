@@ -2,9 +2,26 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Title</title>
 </head>
 <body>
-$END$
+<script>
+    x = parseInt(prompt("nhập số lượng số nguyên cần xuất ra màn hình: "));
+    if (x <= 0) {
+        alert("nhap sai");
+    } else {
+        let i = 0;
+        while (i <= x) {
+            let k = 2;
+            for (m = 2; m <= Math.sqrt(k); m++) {
+                if (k % m !== 0) {
+                    i += 1;
+                    document.write("so nguyen to la: " + k);
+                }
+            }
+            k++;
+        }
+    }
+</script>
 </body>
 </html>

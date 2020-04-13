@@ -7,15 +7,19 @@
 <body>
 <h1>Do you love me?</h1>
 <button onclick="yes()">yes</button>
-<button onclick="no()">no</button>
+<button onmouseover="no()" id="no" style="position: absolute; left: 0;top: 0">no</button>
 <p id="demo"></p>
 
 <script>
     function yes() {
-       document.getElementById("demo").innerText="đúng rồi.bạn yêu tôi";
+        document.getElementById("demo").innerText = "đúng rồi.bạn yêu tôi";
     }
+
     function no() {
-       
+        let x = Math.random() * window.innerWidth;
+        let y = Math.random() * window.innerHeight;
+        document.getElementById("no").style.left = x + "px";
+        document.getElementById("no").style.top = y + "px";
     }
 </script>
 </body>

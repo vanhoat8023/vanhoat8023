@@ -2,9 +2,25 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Title</title>
 </head>
 <body>
-$END$
+<script>
+    sotien = parseInt(prompt("nhap so tien can gui ngan hang: "));
+    sothang = parseInt(prompt("so thang muon gui: "));
+    laisuat = parseInt(prompt("lai suat ngan hang la(%):"));
+    let tongtien;
+    if (sothang < 1) {
+        alert("so thang phai lon hon 1!");
+    } else if (laisuat < 1) {
+        alert("nhap lai suat sai!");
+    } else {
+        for (i = 1; i <= sothang; i++) {
+            tongtien = (sotien * laisuat/100 + sotien);
+            sotien = tongtien;
+        }
+    }
+    alert("số tiền nhận được là: " + tongtien);
+</script>
 </body>
 </html>

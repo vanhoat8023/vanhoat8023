@@ -2,9 +2,22 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Title</title>
 </head>
 <body>
-$END$
+<script>
+      let chieucao= parseFloat(prompt("chieu cao:"));
+      let canNang= parseInt(prompt("can nang:"));
+      let BMI= (canNang/(chieucao*chieucao));
+      if (BMI < 18.5) {
+          alert("Underwight");
+      }else if ( BMI <25.0) {
+          alert("Normal");
+      }else if (BMI < 30.0) {
+          alert("averwight");
+      }else {
+          alert("obese");
+      }
+</script>
 </body>
 </html>

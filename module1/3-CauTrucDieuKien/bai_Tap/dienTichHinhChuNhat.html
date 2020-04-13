@@ -2,9 +2,18 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Title</title>
 </head>
 <body>
-$END$
+<script>
+    let chieudai=parseFloat(prompt("chieu dai: "));
+    let chieurong=parseFloat(prompt("chieu rong: "));
+    if (chieurong<0||chieudai<0){
+        alert("nhap lai. chieu dai hoac chieu rong nhap sai!")
+    }else {
+        let ketqua = chieudai * chieurong;
+        alert("ket qua la:" + ketqua);
+    }
+</script>
 </body>
 </html>

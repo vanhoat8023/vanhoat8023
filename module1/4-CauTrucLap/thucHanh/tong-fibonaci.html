@@ -2,9 +2,25 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Title</title>
 </head>
 <body>
-$END$
+<script>
+    let x;
+    let y = 1;
+    let z = 0;
+    let dem = 0;
+    let tong = 0;
+    while (dem < 20) {
+        x = z + y;
+        z = y;
+        y = x;
+        tong = tong + x;
+        dem += 1;
+    }
+    document.writeln(tong);
+
+
+</script>
 </body>
 </html>
