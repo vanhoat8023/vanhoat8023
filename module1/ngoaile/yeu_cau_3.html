@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let check = false;
+    let name = prompt("nhập tên: ");
+    do {
+        let cmnd = prompt("cmnd :");
+        if (!isNaN(cmnd)) {
+            cmnd = Number.parseFloat(cmnd);
+        }
+        if (!Number.isInteger(cmnd)) {
+            alert("cmnd khong dung dinh dang");
+        }
+        if (cmnd < 10000000 && cmnd > 99999999) {
+            alert("cmnd khong dung dinh dang");
+            continue;
+        }
+        check = true;
+    } while (!check);
+    do {
+        let email = prompt("nhap email: ");
+        let counti = 0;
+        let countj = 0;
+        for (let i = 1; i < email.length; i++) {
+            if (email.charAt(i) === "@") {
+                counti++;
+                for (let j = i + 1; j < email.length; j++) {
+                    if (email.charAt(j) === ".") {
+                        countj++;
+                    }
+                }
+            }
+        }
+        if (counti != 1 || countj < 1) {
+            alert("email khong dung");
+        } else {
+            check = true;
+        }
+    } while (!check);
+    do {
+        let birthday = prompt("birthday: ");
+        if (birthday.charAt(2) === "/" && birthday.charAt(5) === "/") {
+            let day = birthday.substring(0, 2);
+            let month = birthday.substring(3, 5);
+            let year = birthday.substring(6, 10);
+            if (!isNaN(day) && !isNaN(month) && !isNaN(year)) {
+                day = Number.parseFloat(day);
+                month = Number.parseFloat(month);
+                yaer = Number.parseFloat(year);
+                if (Number.isInteger(day) && Number.isInteger(month) && Number.isInteger(year)) {
+                    if (day < 32 && month < 13) {
+                        check = true;
+                    }
+                }
+            }
+        }
+        if (!check) {
+            alert("bạn nhập sai định dạng birday");
+        }
+    } while (!check);
+    let address = prompt("address: ");
+    let typeservice = prompt("typeservice: ");
+    let typeroom = prompt("typeroom: ");
+    let typecustomer = prompt("type customer");
+    let discount = prompt("discount: ");
+    let quantityIncluded = prompt(" quantitiIncluded: ");
+    do {
+        let rendDay = prompt(" redDay: ");
+        if (isNaN(rendDay)) {
+            rendDay = Number.parseFloat(rendDay);
+            if (Number.isInteger(rendDay)) {
+                check = true;
+            }
+        }
+        if (!check) {
+            alert("nhập sai định dạng");
+        }
+    } while (!check);
+    let totalpay = 300 * rendDay * (1 - discount / 100);
+    alert("name: " + name + "cmnd: " + cmnd + "totalpay " + totalpay);
+</script>
+</body>
+</html>

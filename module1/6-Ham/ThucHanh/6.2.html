@@ -6,23 +6,20 @@
 </head>
 <body>
 <script>
-    let x = 2;
-    let count = 0;
-    while (count < 20) {
+    function soNgTo(b) {
         let dem = 0;
-        for (i = 2; i <= Math.sqrt(x); i++) {
-            if (x % i === 0) {
+        for (let i = 2; i <= Math.sqrt(b); i++) {
+            if (b % i === 0) {
                 dem += 1;
-                break;
             }
         }
         if (dem < 1) {
-            document.write(x + "la so nguyen to")
-            count++;
+            document.writeln(b+" la so nguyen to");
         }
-        x += 1;
     }
-
+    for (let m = 2; m <= 100; m++) {
+         soNgTo(m);
+    }
 </script>
 </body>
 </html>

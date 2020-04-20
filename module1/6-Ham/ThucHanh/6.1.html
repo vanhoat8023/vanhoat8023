@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let so = parseInt(prompt("nhap so can ktra: "));
+    if (so <= 1) {
+        alert("day khong phai la so ngTo!");
+    } else {
+        let dem = 0;
+        for (let i = 2; i <= Math.sqrt(so); i++) {
+            if (so % i === 0) {
+                dem += 1;
+            }
+        }
+        if (dem < 1) {
+            alert("day la so nguyen to")
+        }else alert("day khong phai la so nguyen to");
+    }
+</script>
+</body>
+</html>

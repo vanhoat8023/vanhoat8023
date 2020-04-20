@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h3>chuyen doi nhiet do</h3>
+<p>
+    <label>fromFoot</label>
+    <input type="number" placeholder="nhiet_do"
+           oninput="xuatNhietDo(this.varlue)"
+           onchange="xuatNhietDo(this.varlue)">
+</p>
+<p>toMeeter:<span id="output"></span></p>
+</body>
+<script>
+    function xuatNhietDo(valNum) {
+        valNum = parseFloat(valNum);
+        document.getElementById("output").innerHTML = (valNum * 0.305);
+    }
+</script>
+</html>

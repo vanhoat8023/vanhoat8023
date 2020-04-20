@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p id="demo"></p>
+<script>
+    let a = ["Polaris", "Aldebaran", "Deneb", "Vega", "Altair", "Dubhe", "Regulus"];
+    let b = ["Ursa Minor", "Tarurus", "Cygnus", "Lyra", "Aquila", "Ursa Major", "Leo"];
+
+    function ngoisao(a, b) {
+        m = prompt("nhập ngôi sao: ");
+        for (let i = 1; i < a.length; i++) {
+            let ktra = "";
+            if (m === a[i]) {
+                ktra = b[i];
+                alert("ngoi sao can tim la: " + ktra);
+            }else continue;
+        }
+
+    }
+
+    document.getElementById("demo").innerHTML = ngoisao(a, b);
+</script>
+</body>
+</html>

@@ -10,17 +10,17 @@
     let cmnd = "194634172";
     let birthday = "16/03/97";
     let email = "vanhoat1631997@gmail.com";
-    let address = "Quảng Bình";
-    let typeservice = "hotel";
+    let address = "đà nẵng";
+    let typeservice = "room";
     let typeroom = "vip";
-    let typecustomer = "diamod";
-    let discount = "10%";
+    let typecustomer = "diamond";
+    let discount = "10";
     let quantityIncluded = "10";
     let rendDay = "8";
     let totalpay = 300 * rendDay * (1 - discount / 100);
+    alert("gia tien phai tra la:" + totalpay);
     let choose = parseInt(prompt("1.hiển thị thông tin khách hàng" + "\n" + "2. chỉnh sửa thông tin khách hàng"
         + "\n" + "3. hiển thị thông tin sau khi được giảm giá"));
-    alert("name: " + name + "cmnd: " + cmnd + "totalpay " + totalpay);
     switch (choose) {
         case 1: {
             alert("Tên: " + name + "\n" +
@@ -34,10 +34,11 @@
                 "giảm giá:" + discount + "\n" +
                 "số lượng đi kèm: " + quantityIncluded + "\n" +
                 "so lượng ngày:" + rendDay);
-            break;
         }
+        break;
+
         case 2: {
-            let chooseEdit= parseInt(prompt("1.Tên: " + name + "\n" +
+            let chooseEdit = parseInt(prompt("1.Tên: " + name + "\n" +
                 "2.cmnd: " + cmnd + "\n" +
                 "3.ngày sinh nhật: " + birthday +
                 "4.email: " + email + "\n" +
@@ -48,37 +49,37 @@
                 "9.giảm giá:" + discount + "\n" +
                 "10.số lượng đi kèm: " + quantityIncluded + "\n" +
                 "11.so lượng ngày:" + rendDay));
-              switch (chooseEdit) {
-                case 1:{
-                    name=prompt("Enter name: ");
+            switch (chooseEdit) {
+                case 1: {
+                    name = prompt("Enter name: ");
                     break;
                 }
-                case 2:{
-                    cmnd=prompt("Enter cmnd: ");
+                case 2: {
+                    cmnd = prompt("Enter cmnd: ");
                     break;
                 }
-                case 3:{
-                    birthday=prompt("Enter ngày sinh:");
+                case 3: {
+                    birthday = prompt("Enter ngày sinh:");
                     break;
                 }
-                case 4:{
-                    email=prompt("Enter email:");
+                case 4: {
+                    email = prompt("Enter email:");
                     break;
                 }
-                case 5:{
-                    address= prompt("Enter que quan:");
+                case 5: {
+                    address = prompt("Enter que quan:");
                     break
                 }
-                case 6:{
-                    typeservice=prompt("Enter loai dich vu:");
+                case 6: {
+                    typeservice = prompt("Enter loai dich vu:");
                     break;
                 }
-                case 7:{
-                    typeroom=prompt("Enter loai phong:");
+                case 7: {
+                    typeroom = prompt("Enter loai phong:");
                     break;
                 }
-                case 8:{
-                    typecustomer=prompt("Enter loai khach hang: ");
+                case 8: {
+                    typecustomer = prompt("Enter loai khach hang: ");
                     break;
                 }
                 case 9: {
@@ -86,17 +87,17 @@
                     break;
                 }
                 case 10: {
-                    quantityIncluded=prompt("Enter so luong di kem:");
+                    quantityIncluded = prompt("Enter so luong di kem:");
                     break;
                 }
-                case 11:{
-                    rendDay=prompt("Enter so luong ngay:");
+                case 11: {
+                    rendDay = prompt("Enter so luong ngay:");
                     break;
                 }
-                default:{
+                default: {
                     alert("ban chon sai so(loai hinh)");
                 }
-              }
+            }
 
             alert("Tên: " + name + "\n" +
                 "cmnd: " + cmnd + "\n" +
@@ -109,12 +110,48 @@
                 "giảm giá:" + discount + "\n" +
                 "số lượng đi kèm: " + quantityIncluded + "\n" +
                 "so lượng ngày:" + rendDay);
-              break;
+            break;
         }
-        default:{
-            alert("su lua chon cua ban khong co trong thuc don");
+        case 3: {
+            let money = 0;
+            if (typeservice === "villa") {
+                money = 500;
+            } else if (typeservice === "house") {
+                money = 300;
+            } else if (typeservice === "room") {
+                money = 100;
+            }
+            let temp = 0;
+            if (address === "đà nẵng") {
+                temp += 20;
+            } else if (address === "Huế") {
+                temp += 10
+            } else if (address === "quảng nam") {
+                temp += 5;
+            }
+            if (rendDay>7){
+                temp+=30;
+            }else if (rendDay>5){
+                temp+=20;
+            }else if (rendDay>2){
+                temp+=10;
+            }
+            if (typecustomer==="diamond"){
+                temp+=15
+            }else if (typecustomer==="platium"){
+                temp+=10;
+            }else if (typecustomer==="gold"){
+                temp+=5;
+            }else if (typecustomer==="silver"){
+                temp+=2;
+            }else if (typecustomer==="member"){
+                temp+=0;
+            }
+            alert("total pay:" + (money * rendDay - temp));
+            break;
         }
     }
+
 </script>
 </body>
 </html>
