@@ -6,22 +6,26 @@
 </head>
 <body>
 <script>
-    let check = false;
+
     let name = prompt("nhập tên: ");
+    let check = false;
+    let cmnd;
     do {
-        let cmnd = prompt("cmnd :");
+        cmnd = prompt("cmnd :");
         if (!isNaN(cmnd)) {
             cmnd = Number.parseFloat(cmnd);
         }
         if (!Number.isInteger(cmnd)) {
             alert("cmnd khong dung dinh dang");
+            continue;
         }
-        if (cmnd < 10000000 && cmnd > 99999999) {
+        if (cmnd < 10000000 || cmnd > 99999999) {
             alert("cmnd khong dung dinh dang");
             continue;
         }
         check = true;
     } while (!check);
+    check = false;
     do {
         let email = prompt("nhap email: ");
         let counti = 0;
@@ -42,6 +46,7 @@
             check = true;
         }
     } while (!check);
+    check=false;
     do {
         let birthday = prompt("birthday: ");
         if (birthday.charAt(2) === "/" && birthday.charAt(5) === "/") {

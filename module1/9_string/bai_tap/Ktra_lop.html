@@ -1,0 +1,19 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let lop=prompt("nhập lớp học cần kiểm tra: ");
+    let regexp=/^[CAP][0-9]{4}[GHKLM]/;
+    function text(str) {
+        if (regexp.test(str)){
+            alert("day la 1 lop!")
+        }else alert("day khong phai la mot lop!")
+    }
+    text(lop);
+</script>
+</body>
+</html>

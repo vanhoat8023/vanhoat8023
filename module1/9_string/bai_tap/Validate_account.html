@@ -1,0 +1,19 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let regexp=/^[_a-z0-9]{6,}$/;
+    let fortunr=prompt("nhập tài khoản cần kiểm tra: ");
+    function text(str) {
+        if (regexp.test(str)){
+            alert("đây là một tài khoản!")
+        }else alert("đây không phải là một tài khoản!")
+    }
+    text(fortunr);
+</script>
+</body>
+</html>

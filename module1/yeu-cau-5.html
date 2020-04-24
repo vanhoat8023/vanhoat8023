@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h2>main menu</h2>
+<script>
+    let summary = "";
+    let arrListCustomers = [];
+    function menu() {
+        let sout = "<table>";
+        sout += "<button onclick='add()'>Add New Customer</button><br>";
+        sout += "<button onclick='display()'>Display Information Customer</button><br>";
+        sout += "<button onclick='edit()'>Edit information Customer</button><br>";
+        sout += "<button onclick='delete()'>Delete Customer</button></br>";
+        sout += "<button >Exit</button><br>";
+        document.write(sout);
+    }
+
+    function add() {
+        let name = prompt("nhập tên: ");
+        let cmnd = prompt("cmnd :");
+        let birthday = prompt("email: ");
+        let address = prompt("address: ");
+        let typeservice = prompt("typeservice: ");
+        let typeroom = prompt("typeroom: ");
+        let typecustomer = prompt("type customer");
+        let discount = prompt("discount: ");
+        let quantityIncluded = prompt(" quantitiIncluded: ");
+        let rendDay = prompt(" redDay: ");
+        arrListCustomers.push(name);
+        arrListCustomers.push(cmnd);
+        arrListCustomers.push(birthday);
+        arrListCustomers.push(address);
+        arrListCustomers.push(typeservice);
+        arrListCustomers.push(typeroom);
+        arrListCustomers.push(typecustomer);
+        arrListCustomers.push(discount);
+        arrListCustomers.push(quantityIncluded);
+        arrListCustomers.push(rendDay);
+        menu();
+    }
+
+    function display() {
+        summary = arrListCustomers.toString();
+        alert(summary);
+    }
+    function edit() {
+        let deletearr=parseInt(prompt("nhap "))
+    }
+
+    menu();
+</script>
+</body>
+</html>

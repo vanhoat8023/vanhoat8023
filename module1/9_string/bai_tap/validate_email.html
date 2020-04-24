@@ -1,0 +1,23 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let email = prompt("nhap email:");
+        function text(str) {
+            let regexp = /^[A-Za-z0-9]+@[A-Za-z0-9]+(\.[A-Za-z0-9]+)$/;
+            if (regexp.test(str)) {
+                check=true;
+                alert("day la mot email");
+            } else {
+                alert("day khong phai la mot email")
+            }
+        }
+    text(email);
+
+</script>
+</body>
+</html>

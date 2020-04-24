@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let birthday=prompt("nhap ngay sinh: ");
+    let regexp=/^[0-9]{2}\/[0-9]{2}\/[0-9]{4}$/;
+    function text(str) {
+        if (regexp.test(str)){
+            alert("day la ngay sinh nhat")
+        }else alert("day khong phai la ngay sinh nhat")
+    }
+    text(birthday);
+</script>
+</body>
+</html>
