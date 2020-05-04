@@ -5,21 +5,32 @@
     <title>Title</title>
 </head>
 <body>
-<h2>main menu</h2>
 <script>
-    let summary = "";
-    let arrListCustomers = [];
-    function menu() {
-        let sout = "<table>";
-        sout += "<button onclick='add()'>Add New Customer</button><br>";
-        sout += "<button onclick='display()'>Display Information Customer</button><br>";
-        sout += "<button onclick='edit()'>Edit information Customer</button><br>";
-        sout += "<button onclick='delete()'>Delete Customer</button></br>";
-        sout += "<button >Exit</button><br>";
-        document.write(sout);
+    let arrNameCustomer = [];
+
+    function displayMainMenu() {
+        let choose = parseInt(prompt("1.Add New Customer" + "\n2.Display Information Customer" +
+            "\n3.Edit Information Customer" + "\n4.Delete Customer" + "\n5.Exit"));
+        switch (choose) {
+            case 1:
+                addNewCustomer();
+                break;
+            case 2:
+                displayCustomers();
+                break;
+            case 3:
+                editCustomer();
+                break;
+            case 4:
+                deleteCustomer();
+                break;
+            default:
+                alert("failed!")
+        }
     }
 
-    function add() {
+    function addNewCustomer() {
+        let cusInfo = [];
         let name = prompt("nhập tên: ");
         let cmnd = prompt("cmnd :");
         let birthday = prompt("email: ");
@@ -30,28 +41,99 @@
         let discount = prompt("discount: ");
         let quantityIncluded = prompt(" quantitiIncluded: ");
         let rendDay = prompt(" redDay: ");
-        arrListCustomers.push(name);
-        arrListCustomers.push(cmnd);
-        arrListCustomers.push(birthday);
-        arrListCustomers.push(address);
-        arrListCustomers.push(typeservice);
-        arrListCustomers.push(typeroom);
-        arrListCustomers.push(typecustomer);
-        arrListCustomers.push(discount);
-        arrListCustomers.push(quantityIncluded);
-        arrListCustomers.push(rendDay);
-        menu();
+        cusInfo.push(name);
+        cusInfo.push(cmnd);
+        cusInfo.push(birthday);
+        cusInfo.push(address);
+        cusInfo.push(typeservice);
+        cusInfo.push(typeroom);
+        cusInfo.push(typecustomer);
+        cusInfo.push(discount);
+        cusInfo.push(quantityIncluded);
+        cusInfo.push(rendDay);
+
+        arrNameCustomer.push(cusInfo);
+        alert("đã nhập xong!");
+        displayMainMenu();
     }
 
-    function display() {
-        summary = arrListCustomers.toString();
-        alert(summary);
-    }
-    function edit() {
-        let deletearr=parseInt(prompt("nhap "))
+    function displayCustomers() {
+        let temp = "";
+        for (let i = 0; i < arrNameCustomer.length; i++) {
+            temp += i + ".name" + arrNameCustomer[i][0] + "\n";
+        }
+        let chooseDislay = parseInt(prompt(temp));
+        switch (chooseDislay) {
+            case 0:
+                alert("ten:" + arrNameCustomer[chooseDislay][0] + "\n" +
+                    "cmnd:" + arrNameCustomer[chooseDislay][1] + "\n" +
+                    "birthday:" + arrNameCustomer[chooseDislay][2] + "\n" +
+                    "address:" + arrNameCustomer[chooseDislay][3] + "\n" +
+                    "typeservice:" + arrNameCustomer[chooseDislay][4] + "\n" +
+                    "typeroom:" + arrNameCustomer[chooseDislay][5] + "\n" +
+                    "typecustomer:" + arrNameCustomer[chooseDislay][6] + "\n" +
+                    "discount:" + arrNameCustomer[chooseDislay][7] + "\n" +
+                    "quantityIncluded" + arrNameCustomer[chooseDislay][8] + "\n" +
+                    "renday:" + arrNameCustomer[chooseDislay][9] + "\n");
+                break;
+            default:
+                alert("failed!");
+        }
+        displayMainMenu();
     }
 
-    menu();
+    function editCustomer() {
+        let chooseDelete = parseInt(prompt("1.name\n" + "2.cmnd\n" + "3.birthday\n" + "4.address\n" + "5.typeservice\n" +
+            "6.typeroom\n" + "7.typercustomer\n" + "8.discount\n" + "9.quantityIncleded\n" +
+            "10.renday"));
+        switch (chooseDelete) {
+            case 1:
+                arrNameCustomer[0][0] = prompt("nhap lai ten: ");
+                break;
+            case 2:
+                arrNameCustomer[0][1] = prompt("nhap lai cmnd:");
+                break;
+            case 3:
+                arrNameCustomer[0][3] = prompt("nhap lai address:");
+                break;
+            case 4:
+                arrNameCustomer[0][4] = prompt("nhap lai typeservice:");
+                break;
+            case 5:
+                arrNameCustomer[0][5] = prompt("nhap lai typeroom:");
+                break;
+            case 6:
+                arrNameCustomer[0][6] = prompt("nhap lai typecustomer:");
+                break;
+            case 7:
+                arrNameCustomer[0][7] = prompt("nhap lai discount:");
+                break;
+            case 8:
+                arrNameCustomer[0][8] = prompt("nhap lai quantityIncluded:");
+                break;
+            case 9:
+                arrNameCustomer[0][9] = prompt("nhap lai renday:");
+                break;
+            case 10:
+                arrNameCustomer[0][2] = prompt("nhap lai birthday:");
+                break;
+            default:
+                alert("failed!");
+        }
+        displayMainMenu();
+    }
+
+    function deleteCustomer() {
+        let temp = "";
+        for (let i = 0; i < arrNameCustomer.length; i++) {
+            temp += i + ".name" + arrNameCustomer[i][0] + "\n";
+        }
+        let chooseDelete = parseInt(prompt(temp));
+        arrNameCustomer.splice(chooseDelete,1);
+        displayMainMenu();
+    }
+
+    displayMainMenu();
 </script>
 </body>
 </html>

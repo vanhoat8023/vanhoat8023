@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="Customer.js"></script>
+</head>
+<body>
+<script>
+    let listCustomer = [];
+    let regexpEmail = /\S+@\S+\.\S/;
+    let regexpCMND = /^[0-9]{8,8}/;
+    let regexpBirthday = /^\d{2}[./-]\d{2}[./-]\d{4}$/;
+
+    function DisplayMainMenu() {
+        let choose = parseInt(prompt("1.Add New Customer" + "\n2.Display Information Customer" +
+            "\n3.Display total pays Customer" + "\n4.Edit Information Customer" +
+            "\n5.Delete Customer" + "\n6.Exit"));
+        switch (choose) {
+            case 1:
+                addNewCustomer();
+                break;
+            case 3:
+                displaytotalpays();
+            default:
+                alert("failed!");
+        }
+
+
+    }
+
+    function displaytotalpays() {
+        let temp = "";
+        for (let i = 0; i < listCustomer.length; i++) {
+            temp += i + ".name" + listCustomer[i].getname() + "\n";
+        }
+        let chooseDislay = parseInt(prompt(temp));
+        alert("totalpays cua ban la:" + listCustomer[chooseDislay].TotalPays);
+    }
+
+    function addNewCustomer() {
+        let chechValid = false;
+        let name = prompt("nhập tên: ");
+        let cmnd;
+        let birthday;
+        let email;
+        do {
+            cmnd = prompt("cmnd :");
+            if (regexpCMND.test(cmnd)) {
+                chechValid = true;
+            } else alert("ban nhap sai cmnd,vui long nhap lai!");
+        } while (!chechValid);
+        chechValid = false;
+        do {
+            email = prompt("email");
+            if (regexpEmail.test(email)) {
+                chechValid = true;
+            } else alert("email bạn nhập không hợp lệ.vui lòng nhập lại!");
+        } while (!chechValid);
+        chechValid = false;
+        do {
+            birthday = prompt("birthday: ");
+            if (regexpBirthday.test(birthday)) {
+                chechValid = true;
+            } else alert("email ban nhap sai, vui long nhap lai!")
+        } while (!chechValid);
+        chechValid = false;
+        let address = prompt("address: ");
+        let typeservice = prompt("typeservice: ");
+        let typeroom = prompt("typeroom: ");
+        let typecustomer = prompt("type customer");
+        let discount = prompt("discount: ");
+        let quantityIncluded = prompt(" quantitiIncluded: ");
+        let rendDay = prompt(" redDay: ");
+        let cus = new customer();
+        cus.setName(name);
+        cus.setBirthday(birthday);
+        cus.setCMND(cmnd);
+        cus.setAddress(address);
+        cus.setEmail(email);
+        cus.setTypeService(typeservice);
+        cus.setTyperoom(typeroom);
+        cus.setTypeCustomer(typecustomer);
+        cus.setDiscount(discount);
+        cus.setQuantytiIncluded(quantityIncluded);
+        cus.setRentDays(rendDay);
+        listCustomer.push(cus);
+    }
+
+    DisplayMainMenu();
+</script>
+</body>
+</html>

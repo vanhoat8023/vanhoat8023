@@ -7,7 +7,21 @@
 <body>
 <script>
 
-    let name = prompt("nhập tên: ");
+    let tempName = '';
+    let name = prompt('Input Name: ');
+    name = name.trim().toLowerCase();
+    for (let i = 0; i < name.length; i++) {
+        if (name[i] === ' ' && name[i + 1] === ' ') {
+            continue;
+        }
+        if (i === 0 || name[i - 1] === ' ') {
+            tempName += name[i].toUpperCase();
+            continue;
+        }
+        tempName += name[i];
+    }
+    alert(tempName);
+    name = tempName;
     let check = false;
     let cmnd;
     do {
@@ -46,7 +60,7 @@
             check = true;
         }
     } while (!check);
-    check=false;
+    check = false;
     do {
         let birthday = prompt("birthday: ");
         if (birthday.charAt(2) === "/" && birthday.charAt(5) === "/") {
@@ -68,12 +82,26 @@
             alert("bạn nhập sai định dạng birday");
         }
     } while (!check);
-    let address = prompt("address: ");
+    let tempAddress = '';
+    let address = prompt('Input Address: ').trim().toLowerCase();
+    for (let i = 0; i < address.length; i++) {
+        if (address[i] === ' ' && address[i + 1] === ' ') {
+            continue;
+        }
+        if (i === 0 || address[i - 1] === ' ') {
+            tempAddress += address[i].toUpperCase();
+            continue;
+        }
+        tempAddress += address[i];
+    }
+    alert(tempAddress);
+    address = tempAddress;
     let typeservice = prompt("typeservice: ");
     let typeroom = prompt("typeroom: ");
     let typecustomer = prompt("type customer");
     let discount = prompt("discount: ");
     let quantityIncluded = prompt(" quantitiIncluded: ");
+    check = false;
     do {
         let rendDay = prompt(" redDay: ");
         if (isNaN(rendDay)) {
