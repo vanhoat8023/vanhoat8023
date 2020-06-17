@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let k=true;
+    let n=prompt("nhap chuoi can kiem tra:");
+    for (let i=0;i<n.length/2;i++){
+        if (n.charAt(i)!=n.charAt(n.length-i)){
+            k=false;
+            break;
+        }
+    }
+    if (k){
+        alert("day la chuoi doi xung!")
+    }else alert("day khong phai la 1 chuoi doi xung!")
+</script>
+</body>
+</html>

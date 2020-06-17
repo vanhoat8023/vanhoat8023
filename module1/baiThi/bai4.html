@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function displayMainMenu() {
+        let choose = parseInt(prompt("1.Them cong nhan" + "\n2.them cong nhan" + "\n3.chinh sua cong nhan" +
+            "\n4.xoa cong nhan"));
+        switch (choose) {
+            case 1:
+                themCongNhan();
+            default:
+                alert("failed!");
+        }
+    }
+
+    let arrCongNhan = [];
+
+    function themCongNhan() {
+        function displayProducts() {
+            document.body.innerHTML = "";
+            let sout = "<input type='text' id='product'> <button onclick='getProduct()'>Add</button>";
+            sout += "<table>";
+            for (let i = 0; i < arrayProduct.length; i++) {
+                sout += "<tr>"
+                sout += "<td>" + arrayProduct[i] + "</td>";
+                sout += "<td> <button onclick='editProduct(" + i + ")'>Edit</button></td>"
+                sout += "<td> <button onclick='deleteProduct(" + i + ")'>Delete</button></td>"
+                sout += "</tr>"
+            }
+            sout += "</table>";
+            document.write(sout)
+        }
+    }
+    displayMainMenu();
+</script>
+</body>
+</html>

@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>caseStudy</title>
+</head>
+<body>
+
+<script>
+    let listEmployee = [];
+
+    class Employee {
+        constructor(name, birthday, phone, email, cmnd, level, location, salary) {
+            this.name = name;
+            this.birthday = birthday;
+            this.phone = phone;
+            this.email = email;
+            this.cmnd = cmnd;
+            this.level = level;
+            this.location = location;
+            this.salary = salary;
+        }
+
+        set Name(name) {
+            this.name = name;
+        }
+
+        get Name() {
+            return this.name;
+        }
+
+        set Birthday(birthday) {
+            this.birthday = birthday;
+        }
+
+        get Birthday() {
+            return this.birthday;
+        }
+
+        set Phone(phone) {
+            this.name = phone;
+        }
+
+        set Email(email) {
+            this.email = email;
+        }
+        get Email() {
+            return this.email;
+        }
+
+        set CMND(cmnd) {
+            this.cmnd = cmnd;
+        }
+        get CMND(){
+            return this.cmnd;
+        }
+
+        set Level(level) {
+            this.level = level;
+        }
+        get Level() {
+            return this.level;
+        }
+
+        set Location(location) {
+            this.location = location;
+        }
+        get Location() {
+            return this.location;
+        }
+
+        get Salary() {
+            if (this.getLocation() === "Managa") {
+                this.salary = 500;
+            } else if (this.getLocation() === "Sale") {
+                this.salary = 300;
+            } else if (this.getLocation() === "Maketing") {
+                this.salary = 200;
+            }
+            return this.salary;
+        }
+
+    }
+
+    // const nameE = prompt("Input name:");
+    // let hoat = new Employee("Hoat","11/11/2019","09876543","hoat@ssd.com","194634173","A","Sale","Managa");
+    // let quoc =new Employee("Quoc","11/11/2019","09876543","hoat@ssd.com","194634173","A","Sale","Managa");
+    // let listEmployee = [hoat,quoc];
+    // hoat.Name ="Hoat2";
+    // const name = hoat.Name;
+    // let newE = new Employee(nameE,);
+    // const table = document.createElement("table");
+    // for (let i = 0; i < listEmployee.length; i++) {
+    //     const  row = document.createElement("tr");
+    //     for (let j = 0; j < Object.keys(listEmployee[i]) ; j++) {
+    //         const cell = document.createElement("td");
+    //         const data = document.createTextNode("abc");
+    //         cell.appendChild(data);
+    //
+    //     }
+    //     row.appendChild(cell);
+    // }
+    // table.appendChild(row);
+
+
+    function displayMenu() {
+        let choose = parseInt(prompt("1.Add New Employee" + "\n2.Display information Employee" +
+            "\n3.Salary of Employee" + "\n4.Exit"));
+        switch (choose) {
+            case 1:
+                addNewEmployee();
+                break;
+            case 2:
+                displayEmployee();
+                break;
+            case 3:
+                displaySalary();
+                break;
+            case 4:
+            default:
+                alert("false!");
+        }
+
+
+        function addNewEmployee() {
+            let employee = new Employee();
+
+            employee.Name = prompt("Enter name: ");
+            employee.Birthday = prompt("Enter birthday: ");
+            employee.Email = prompt("Enter Email: ");
+            employee.Phone = prompt("Enter phone: ");
+            employee.Level = prompt("Enter level: ");
+            employee.CMND = prompt("Enter cmnd: ");
+            employee.Location = prompt("Enter location: ");
+            listEmployee.push(employee);
+            alert("ban da them thanh cong employee!");
+            displayMenu();
+        }
+
+        function displayEmployee() {
+            let result = "";
+            for (let i = 0; i < listEmployee.length; i++) {
+                result += i + ".Name" + listEmployee[i].Name + "\n";
+            }
+            let chooseDisplay = parseInt(prompt(result));
+
+            alert("Tên: " + listEmployee[chooseDisplay].Name + "\n" +
+                "Ngày sinh: " + listEmployee[chooseDisplay].Birthday + "\n" +
+                "Email: " + listEmployee[chooseDisplay].Email + "\n" +
+                "Chứng minh nhân dân: " + listEmployee[chooseDisplay].CMND + "\n" +
+                "Trình độ: " + listEmployee[chooseDisplay].Level + "\n" +
+                "Vị trí: " + listEmployee[chooseDisplay].Location + "\n");
+            displayMenu();
+        }
+
+        function displaySalary() {
+
+            let result = "";
+            for (let i = 0; i < listEmployee.length; i++) {
+                result += i + ".Name" + listEmployee[i].Name() + "\n";
+            }
+            let chooseDisplay = parseInt(prompt(result));
+            alert("Lương của nhân viên: " + listEmployee[chooseDisplay].Name() + " là: " + listEmployee[chooseDisplay].Salary());
+            displayMenu();
+
+        }
+
+    }
+
+    displayMenu();
+</script>
+</body>
+</html>

@@ -60,7 +60,7 @@
     function displayCustomers() {
         let temp = "";
         for (let i = 0; i < arrNameCustomer.length; i++) {
-            temp += i + ".name" + arrNameCustomer[i][0] + "\n";
+            temp += (i+1) + ".name" + arrNameCustomer[i][0] + "\n";
         }
         let chooseDislay = parseInt(prompt(temp));
         switch (chooseDislay) {
